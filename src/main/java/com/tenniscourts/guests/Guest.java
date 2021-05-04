@@ -1,32 +1,41 @@
 package com.tenniscourts.guests;
 
-import com.tenniscourts.config.persistence.BaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table
-@Getter
-@Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-@ToString
-public class Guest extends BaseEntity<Long> {
+public class Guest {
 
-  @Column
-  @NotNull
-  private String name;
+
+
+	@Id
+	@GeneratedValue
+	@Column(name = "guestid")
+	private Long guestid;
+
+	@Column
+	@NotNull
+	private String name;
+
+	public Long getGuestid() {
+		return guestid;
+	}
+
+	public void setGuestid(Long guestId) {
+		this.guestid = guestId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

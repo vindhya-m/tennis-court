@@ -84,7 +84,7 @@ public class ReservationService {
         reservationRepository.save(previousReservation);
 
         ReservationDTO newReservation = bookReservation(CreateReservationRequestDTO.builder()
-                .guestId(previousReservation.getGuest().getId())
+                .guestId(previousReservation.getGuest().getGuestid())
                 .scheduleId(scheduleId)
                 .build());
         newReservation.setPreviousReservation(reservationMapper.map(previousReservation));
