@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tenniscourts.guests.manager.GuestManager;
 import com.tenniscourts.guests.model.ServiceResponse;
-
+/* controller for handling guest members */
 @RestController
 @RequestMapping("/api/v1/guest")
 public class GuestController {
